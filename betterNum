@@ -1,0 +1,29 @@
+class betterNum():
+    def __init__(self, val: float): self.val = val; 
+    
+    def __float__(self): return float(self.val)
+    def __int__(self): return int(self.val)
+    def __str__(self): return str(self.val)
+
+    def add(self, other: float): self.val += other; return self
+    def subtract(self, other: float):self.val -= other; return self
+    def subfrom(self, other: float): self.val = other - self.val; return self
+    def multiply(self, other: float): self.val *= other; return self
+    def divide(self, other: float): self.val /= other; return self
+    def modulate(self, other: float): self.val %= other; return self
+    def power(self, other: float): self.val **= other; return self
+    def root(self, other: float): self.val **= (1/other); return self
+    
+    def absolute(self): self.val = abs(self.val); return self
+    def negate(self): self.val = -self.val; return self
+    def ceiling(self, ndigits: int = 0): self.val = round((self.val * (10 ** ndigits) // 1) / (10 ** ndigits) + 1, ndigits); return self
+    def floor(self, ndigits: int = 0): self.val = round((self.val * (10 ** ndigits) // 1) / (10 ** ndigits), ndigits); return self
+    def round(self, ndigits: int = 1): self.val = round(self.val, ndigits); return self
+    def maximum(self, maxVal: int): self.val = min(self.val, maxVal); return self
+    def minimum(self, minVal: int): self.val = max(self.val, minVal); return self
+    
+    def greaterThan(self, other: float): return self.val > other
+    def lessThan(self, other: float): return self.val < other
+    def equalTo(self, other: float): return self.val == other
+    def greaterOrEqualTo(self, other: float): return self.val >= other
+    def lessOrEqualTo(self, other: float): return self.val <= other
